@@ -15,20 +15,12 @@ public class configClass {
         Actor actor = new Actor("Hrithik","Male" ,45);
        return actor;
     }
-    @Bean
-    public Actor getActor2()
-    {
 
-        Actor actor2 = new Actor("Mahesh","Male" ,36);
-
-        return actor2;
-    }
 
    @Bean
     public Movie getMovie()
     {
-       // return new Movie(Arrays.asList(getActor()));
-        return new Movie(Arrays.asList(getActor2()));
+        return new Movie((getActor()));
 
     }
 

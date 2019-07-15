@@ -11,7 +11,7 @@ public class BeanLifecycleDemoBean implements InitializingBean, DisposableBean {
 
     String name;
 
-
+    @Autowired
     public String getName() {
         return name;
     }
@@ -20,24 +20,24 @@ public class BeanLifecycleDemoBean implements InitializingBean, DisposableBean {
         this.name = name;
     }
 
-    @PostConstruct
-    public void custominit(){
-        System.out.println("MyService init method called");
-    }
-    @PreDestroy
-    public void customdestroy(){
-        System.out.println("MyService destroy method called");
-    }
-
     @Override
     public void destroy() throws Exception {
-        System.out.println("destroy....");
-
+        System.out.println("it is destroyed");
     }
 
+    @PostConstruct
+    public void customInit()
+    {
+        System.out.println("this is init method");
+    }
+    @PreDestroy
+    public void customDestroy()
+    {
+        System.out.println("this is destroy method");
+    }
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println("after properities set ");
+        System.out.println("after properties set");
 
     }
 

@@ -1,21 +1,25 @@
 package com.stackroute.domain;
 
-import org.springframework.beans.factory.annotation.Required;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-
-import java.util.Arrays;
 
 @Configuration
 public class configClass {
     @Bean
-    public BeanLifecycleDemoBean BeanLifecycleDemoBean()
+    public BeanLifecycleDemoBean getBean()
     {
-        BeanLifecycleDemoBean beandemo=new BeanLifecycleDemoBean();
-        beandemo.setName("Vishnu Priya");
-        return beandemo;
+        BeanLifecycleDemoBean beanLifeCycleDemoBean = new BeanLifecycleDemoBean();
+        beanLifeCycleDemoBean.setName("vishnu priya");
+        return beanLifeCycleDemoBean;
     }
+    @Bean
+    public BeanPostProcessorDemoBean getbeanpostprocessordemobean()
+    {
+        BeanPostProcessorDemoBean beanPostProcessorDemoBean = new BeanPostProcessorDemoBean();
+        return  beanPostProcessorDemoBean;
+
+    }
+
 
 
 
